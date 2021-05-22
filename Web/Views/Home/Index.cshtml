@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>EVENTO</h1>
+    <p class="lead">Evento is a user friendly, easy to use and free website where you can host your own events or buy tickets for your favourite upcoming event.</p>
+    <p class="lead">Start today.</p>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <div class="d-flex justify-content-around py-3">
+            <p>
+                @Html.ActionLink("Host Your Own Events!", "Register", "Account", new { isHost = true }, new { @class = "btn btn-secondary btn-lg font-weight-bold" })
+            </p>
+            <p>
+                @Html.ActionLink("Start Booking Now!", "Register", "Account", null, new { @class = "btn btn-info btn-lg font-weight-bold" })
+            </p>
+        </div>
+    }
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h1 class="display-4 text-dark" style="text-align:center">1</h1>
+        <h4 style="text-align:center">Enter your event details</h4>
+        <p>
+            Let attendees know when, where, and what your event is about.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h1 class="display-4 text-dark" style="text-align:center">2</h1>
+        <h4 style="text-align:center">Create your tickets</h4>
+        <p>Set up your free tickets, or create multiple ticket types to maximize your sales.</p>
+    </div>
+    <div class="col-md-4">
+        <h1 class="display-4 text-dark" style="text-align:center">3</h1>
+        <h4 style="text-align:center">Publish and share</h4>
+        <p>Once your event is live, easily share to sites like Facebook and Instagram to reach more ticket buyers in more places.</p>
+    </div>
+</div>
